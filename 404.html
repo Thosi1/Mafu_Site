@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+      const redirectTo = '/index.html' + location.search + location.hash;
+      const pathname = location.pathname;
+      if (pathname !== '/') {
+        window.history.replaceState(null, '', '/');
+        window.location.replace(redirectTo);
+      }
+    </script>
   </head>
   <body>
     <p>Redirecting...</p>
